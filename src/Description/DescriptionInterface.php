@@ -4,8 +4,9 @@ namespace Evrinoma\FetchBundle\Description;
 
 use Evrinoma\FetchBundle\Exception\Description\CommunicationException;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionNotValidException;
+use Evrinoma\FetchBundle\Manager\RegisterInterface;
 
-interface DescriptionInterface
+interface DescriptionInterface extends RegisterInterface
 {
 //region SECTION: Public
     /**
