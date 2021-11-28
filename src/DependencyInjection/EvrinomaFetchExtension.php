@@ -13,7 +13,6 @@ class EvrinomaFetchExtension extends Extension
 {
     use HelperTrait;
 
-
 //region SECTION: Public
     public function load(array $configs, ContainerBuilder $container)
     {
