@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\FetchBundle\Exception\Fetch;
+namespace Evrinoma\FetchBundle\Exception\Description;
 
 class DescriptionInvalidException extends \Exception
 {

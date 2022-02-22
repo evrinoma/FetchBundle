@@ -4,9 +4,9 @@ namespace Evrinoma\FetchBundle\Handler;
 
 
 use Evrinoma\FetchBundle\Description\DescriptionInterface;
-use Evrinoma\FetchBundle\Exception\Fetch\DescriptionInvalidException;
-use Evrinoma\FetchBundle\Exception\Handler\NotValidException;
-use Evrinoma\FetchBundle\Exception\Handler\UnprocessableException;
+use Evrinoma\FetchBundle\Exception\Description\DescriptionOverriddenException;
+use Evrinoma\FetchBundle\Exception\Handler\HandlerInvalidException;
+use Evrinoma\FetchBundle\Exception\Handler\HandlerUnprocessableException;
 use Evrinoma\FetchBundle\Pull\PullInterface;
 use Evrinoma\FetchBundle\Run\RunInterface;
 
@@ -21,19 +21,19 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
 //region SECTION: Public
     /**
      * @return HandlerInterface
-     * @throws NotValidException
-     * @throws UnprocessableException
+     * @throws HandlerInvalidException
+     * @throws HandlerUnprocessableException
      */
     public function run(): HandlerInterface
     {
         try {
             $this->data = $this->stream->pull();
         } catch (\Exception $e) {
-            throw new UnprocessableException($e->getMessage());
+            throw new HandlerUnprocessableException($e->getMessage());
         }
 
         if (!$this->isValid()) {
-            throw new NotValidException();
+            throw new HandlerInvalidException();
         }
 
         return $this;
@@ -61,13 +61,15 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
 
     /**
      * @param string $name
+     *
+     * @throws DescriptionOverriddenException
      */
     public function setDescription(string $name): void
     {
         if (array_key_exists($name, $this->description)) {
             $this->stream = $this->description[$name];
         } else {
-            throw new DescriptionInvalidException;
+            throw new DescriptionOverriddenException();
         }
     }
 //endregion Getters/Setters

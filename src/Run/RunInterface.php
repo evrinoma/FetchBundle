@@ -2,16 +2,16 @@
 
 namespace Evrinoma\FetchBundle\Run;
 
-use Evrinoma\FetchBundle\Exception\Handler\UnprocessableException;
-use Evrinoma\FetchBundle\Exception\Handler\NotValidException;
+use Evrinoma\FetchBundle\Exception\Handler\HandlerUnprocessableException;
+use Evrinoma\FetchBundle\Exception\Handler\HandlerInvalidException;
 use Evrinoma\FetchBundle\Handler\HandlerInterface;
 
 interface RunInterface
 {
     /**
      * @return HandlerInterface
-     * @throws NotValidException
-     * @throws UnprocessableException
+     * @throws HandlerInvalidException
+     * @throws HandlerUnprocessableException
      */
     public function run(): HandlerInterface;
 }

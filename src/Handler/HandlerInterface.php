@@ -3,7 +3,7 @@
 namespace Evrinoma\FetchBundle\Handler;
 
 use Evrinoma\FetchBundle\Description\DescriptionInterface;
-use Evrinoma\FetchBundle\Exception\Handler\NotValidException;
+use Evrinoma\FetchBundle\Exception\Handler\HandlerInvalidException;
 use Evrinoma\FetchBundle\Manager\RegisterInterface;
 
 interface HandlerInterface extends RegisterInterface
@@ -11,7 +11,7 @@ interface HandlerInterface extends RegisterInterface
 //region SECTION: Public
     /**
      * @return bool
-     * @throws NotValidException
+     * @throws HandlerInvalidException
      */
     public function isValid(): bool;
 

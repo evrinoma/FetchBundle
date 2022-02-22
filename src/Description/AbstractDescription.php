@@ -2,8 +2,8 @@
 
 namespace Evrinoma\FetchBundle\Description;
 
-use Evrinoma\FetchBundle\Exception\Description\CommunicationException;
-use Evrinoma\FetchBundle\Exception\Description\DescriptionNotValidException;
+use Evrinoma\FetchBundle\Exception\Description\DescriptionCommunicationException;
+use Evrinoma\FetchBundle\Exception\Description\DescriptionInvalidException;
 use Evrinoma\FetchBundle\Pull\PullInterface;
 
 abstract class AbstractDescription implements DescriptionInterface, PullInterface
@@ -11,13 +11,14 @@ abstract class AbstractDescription implements DescriptionInterface, PullInterfac
 //region SECTION: Public
     /**
      * @return array
-     * @throws CommunicationException
-     * @throws DescriptionNotValidException
+     * @throws DescriptionCommunicationException
+     * @throws DescriptionInvalidException
      */
     public function pull(): array
     {
         try {
-            $data = $this->configure() ? $this->load() : [];
+            $dto  = null;
+            $data = $this->configure() ? $this->load($dto) : [];
         } catch (\Exception $e) {
             throw $e;
         }

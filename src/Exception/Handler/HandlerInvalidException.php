@@ -1,10 +1,8 @@
 <?php
 
-namespace Evrinoma\FetchBundle\Exception\Fetch;
+namespace Evrinoma\FetchBundle\Exception\Handler;
 
 class HandlerInvalidException extends \Exception
 {
-//region SECTION: Fields
     protected $message = 'HandlerInvalidException';
-//endregion Fields
 }

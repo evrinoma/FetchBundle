@@ -3,7 +3,7 @@
 namespace Evrinoma\FetchBundle\Manager;
 
 use Evrinoma\FetchBundle\Description\DescriptionInterface;
-use Evrinoma\FetchBundle\Exception\Fetch\HandlerInvalidException;
+use Evrinoma\FetchBundle\Exception\Handler\HandlerInvalidException;
 use Evrinoma\FetchBundle\Handler\HandlerInterface;
 
 class FetchManager implements FetchManagerInterface
