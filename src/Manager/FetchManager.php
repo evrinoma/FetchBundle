@@ -8,12 +8,12 @@ use Evrinoma\FetchBundle\Handler\HandlerInterface;
 
 class FetchManager implements FetchManagerInterface
 {
-//region SECTION: Fields
+
     private array $handler = [];
     private array $name = [];
-//endregion Fields
 
-//region SECTION: Public
+
+
     public function registerHandler(HandlerInterface $handler)
     {
         $tag = $handler->tag();
@@ -27,9 +27,9 @@ class FetchManager implements FetchManagerInterface
         /** @var HandlerInterface $handler */
         $handler->addDescription($description);
     }
-//endregion Public
 
-//region SECTION: Getters/Setters
+
+
     /**
      * @param string $handlerName
      * @param string $descriptionName
@@ -49,6 +49,6 @@ class FetchManager implements FetchManagerInterface
         return $handler;
     }
 
-//endregion Getters/Setters
+
 
 }

@@ -4,11 +4,11 @@ namespace Evrinoma\FetchBundle\Registry;
 
 trait RegistryTrait
 {
-//region SECTION: Fields
-    protected static array $cache = [];
-//endregion Fields
 
-//region SECTION: Protected
+    protected static array $cache = [];
+
+
+
     protected static function addCache($key, $value): void
     {
         if (!static::getCache($key)) {
@@ -37,9 +37,9 @@ trait RegistryTrait
     {
         return array_key_exists($key, static::$cache) ? static::$cache[$key] : null;
     }
-//endregion Protected
 
-//region SECTION: Public
+
+
     public function add($key, $value): RegistryInterface
     {
         static::addCache($key, $value);
@@ -58,9 +58,9 @@ trait RegistryTrait
     {
         return static::allCache();
     }
-//endregion Public
 
-//region SECTION: Getters/Setters
+
+
     public function has($key):bool
     {
         return static::hasCache($key);
@@ -82,5 +82,5 @@ trait RegistryTrait
 
         return $this;
     }
-//endregion Getters/Setters
+
 }

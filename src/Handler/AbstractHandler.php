@@ -12,13 +12,13 @@ use Evrinoma\FetchBundle\Run\RunInterface;
 
 abstract class AbstractHandler implements HandlerInterface, RunInterface
 {
-//region SECTION: Fields
+
     protected ?PullInterface $stream      = null;
     protected array          $data        = [];
     private array            $description = [];
-//endregion Fields
 
-//region SECTION: Public
+
+
     /**
      * @return HandlerInterface
      * @throws HandlerInvalidException
@@ -51,9 +51,9 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
     {
         return static::class;
     }
-//endregion Public
 
-//region SECTION: Getters/Setters
+
+
     public function getRaw(): array
     {
         return $this->data;
@@ -72,5 +72,5 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
             throw new DescriptionOverriddenException();
         }
     }
-//endregion Getters/Setters
+
 }

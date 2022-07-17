@@ -9,7 +9,7 @@ use Evrinoma\FetchBundle\Manager\RegisterInterface;
 
 interface DescriptionInterface extends RegisterInterface
 {
-//region SECTION: Public
+
     /**
      * @param DtoInterface|null $dto
      *
@@ -23,5 +23,5 @@ interface DescriptionInterface extends RegisterInterface
      * @throws DescriptionInvalidException
      */
     public function configure(): bool;
-//endregion Public
+
 }

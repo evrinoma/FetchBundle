@@ -9,19 +9,19 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class EvrinomaFetchBundle extends Bundle
 {
-//region SECTION: Fields
+
     public const BUNDLE = 'fetch';
 
-//endregion Fields
-//region SECTION: Public
+
+
     public function build(ContainerBuilder $container)
     {
         parent::build($container);
         $container->addCompilerPass(new FetchPass());
     }
-//endregion Public
 
-//region SECTION: Getters/Setters
+
+
     public function getContainerExtension()
     {
         if (null === $this->extension) {
@@ -30,7 +30,7 @@ class EvrinomaFetchBundle extends Bundle
 
         return $this->extension;
     }
-//endregion Getters/Setters
+
 
 
 }

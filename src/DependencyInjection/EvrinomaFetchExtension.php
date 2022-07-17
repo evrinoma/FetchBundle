@@ -13,18 +13,18 @@ class EvrinomaFetchExtension extends Extension
 {
     use HelperTrait;
 
-//region SECTION: Public
+
     public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
-//endregion Public
 
-//region SECTION: Getters/Setters
+
+
     public function getAlias()
     {
         return EvrinomaFetchBundle::BUNDLE;
     }
-//endregion Getters/Setters
+
 }

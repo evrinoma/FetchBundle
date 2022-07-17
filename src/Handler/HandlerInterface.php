@@ -8,7 +8,7 @@ use Evrinoma\FetchBundle\Manager\RegisterInterface;
 
 interface HandlerInterface extends RegisterInterface
 {
-//region SECTION: Public
+
     /**
      * @return bool
      * @throws HandlerInvalidException
@@ -24,12 +24,12 @@ interface HandlerInterface extends RegisterInterface
      * @param string $name
      */
     public function setDescription(string $name): void;
-//endregion Public
 
-//region SECTION: Getters/Setters
+
+
     /**
      * @return array
      */
     public function getRaw(): array;
-//endregion Getters/Setters
+
 }

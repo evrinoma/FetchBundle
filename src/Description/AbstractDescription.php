@@ -8,7 +8,7 @@ use Evrinoma\FetchBundle\Pull\PullInterface;
 
 abstract class AbstractDescription implements DescriptionInterface, PullInterface
 {
-//region SECTION: Public
+
     /**
      * @return array
      * @throws DescriptionCommunicationException
@@ -25,5 +25,5 @@ abstract class AbstractDescription implements DescriptionInterface, PullInterfac
 
         return $data;
     }
-//endregion Public
+
 }

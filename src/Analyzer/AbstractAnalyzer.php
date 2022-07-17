@@ -7,16 +7,16 @@ use Evrinoma\FetchBundle\Registry\RegistryTrait;
 abstract class AbstractAnalyzer implements AnalyzerInterface
 {
     use RegistryTrait;
-//region SECTION: Fields
-    protected array        $error = [];
-//endregion Fields
 
-//region SECTION: Protected
+    protected array        $error = [];
+
+
+
     protected function addError(string $error): AbstractAnalyzer
     {
         $this->error[] = $error;
 
         return $this;
     }
-//endregion Protected
+
 }
