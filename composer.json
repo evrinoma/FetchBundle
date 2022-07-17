@@ -14,7 +14,8 @@
     ],
     "require": {
         "php": "^7.4 || ^8.0",
-        "evrinoma/utils-bundle": "dev-master"
+        "evrinoma/utils-bundle": "dev-master",
+        "friendsofphp/php-cs-fixer": "3.4"
     },
     "autoload": {
         "psr-4": {
@@ -46,6 +47,14 @@
         "evrinoma/test-utils-bundle": "dev-master"
     },
     "repositories": {
+        "dto": {
+            "type": "vcs",
+            "url": "https://github.com/evrinoma/DtoBundle.git"
+        },
+        "dto-common": {
+            "type": "vcs",
+            "url": "https://github.com/evrinoma/DtoCommon.git"
+        },
         "test-utils": {
             "type": "vcs",
             "url": "https://github.com/evrinoma/TestUtilsBundle.git"

@@ -1,7 +1,17 @@
 <?php
 
-namespace Evrinoma\FetchBundle\Handler;
+declare(strict_types=1);
 
+/*
+ * This file is part of the package.
+ *
+ * (c) Nikolay Nikolaev <evrinoma@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Evrinoma\FetchBundle\Handler;
 
 use Evrinoma\FetchBundle\Description\DescriptionInterface;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionOverriddenException;
@@ -12,15 +22,13 @@ use Evrinoma\FetchBundle\Run\RunInterface;
 
 abstract class AbstractHandler implements HandlerInterface, RunInterface
 {
-
-    protected ?PullInterface $stream      = null;
-    protected array          $data        = [];
+    protected ?PullInterface $stream = null;
+    protected array          $data = [];
     private array            $description = [];
-
-
 
     /**
      * @return HandlerInterface
+     *
      * @throws HandlerInvalidException
      * @throws HandlerUnprocessableException
      */
@@ -52,8 +60,6 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
         return static::class;
     }
 
-
-
     public function getRaw(): array
     {
         return $this->data;
@@ -66,11 +72,10 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
      */
     public function setDescription(string $name): void
     {
-        if (array_key_exists($name, $this->description)) {
+        if (\array_key_exists($name, $this->description)) {
             $this->stream = $this->description[$name];
         } else {
             throw new DescriptionOverriddenException();
         }
     }
-
 }
