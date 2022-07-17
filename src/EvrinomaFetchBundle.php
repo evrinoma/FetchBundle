@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class EvrinomaFetchBundle extends Bundle
 {
 //region SECTION: Fields
-    public const FETCH_BUNDLE = 'fetch';
+    public const BUNDLE = 'fetch';
 
 //endregion Fields
 //region SECTION: Public

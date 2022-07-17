@@ -24,7 +24,7 @@ class EvrinomaFetchExtension extends Extension
 //region SECTION: Getters/Setters
     public function getAlias()
     {
-        return EvrinomaFetchBundle::FETCH_BUNDLE;
+        return EvrinomaFetchBundle::BUNDLE;
     }
 //endregion Getters/Setters
 }
