@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Evrinoma\FetchBundle\Handler\Api;
+namespace Evrinoma\FetchBundle\Description\Api;
 
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\FetchBundle\Description\AbstractDescription;
