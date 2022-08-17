@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Evrinoma\FetchBundle\Handler;
 
+use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\FetchBundle\Description\DescriptionInterface;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionOverriddenException;
 use Evrinoma\FetchBundle\Exception\Handler\HandlerInvalidException;
@@ -23,6 +24,7 @@ use Evrinoma\FetchBundle\Run\RunInterface;
 abstract class AbstractHandler implements HandlerInterface, RunInterface
 {
     protected ?PullInterface $stream = null;
+    protected ?DtoInterface $dto = null;
     protected array          $data = [];
     private array            $description = [];
 
@@ -35,7 +37,7 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
     public function run(): HandlerInterface
     {
         try {
-            $this->data = $this->stream->pull();
+            $this->data = $this->stream->pull($this->dto);
         } catch (\Exception $e) {
             throw new HandlerUnprocessableException($e->getMessage());
         }
@@ -43,6 +45,13 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
         if (!$this->isValid()) {
             throw new HandlerInvalidException();
         }
+
+        return $this;
+    }
+
+    public function setDto(DtoInterface $dto): HandlerInterface
+    {
+        $this->dto = $dto;
 
         return $this;
     }

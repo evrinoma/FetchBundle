@@ -31,7 +31,7 @@ abstract class AbstractApiDescription extends AbstractDescription
     public function __construct(string $apiHost)
     {
         $this->client = HttpClient::create();
-        $this->apiHost = $apiHost.'/';
+        $this->apiHost = $apiHost;
     }
 
     abstract protected function getOptions(?DtoInterface $dto): array;

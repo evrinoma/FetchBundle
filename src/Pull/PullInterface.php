@@ -13,16 +13,19 @@ declare(strict_types=1);
 
 namespace Evrinoma\FetchBundle\Pull;
 
+use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionCommunicationException;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionInvalidException;
 
 interface PullInterface
 {
     /**
+     * @param ?DtoInterface $dto
+     *
      * @return array
      *
      * @throws DescriptionCommunicationException
      * @throws DescriptionInvalidException
      */
-    public function pull(): array;
+    public function pull(?DtoInterface $dto): array;
 }

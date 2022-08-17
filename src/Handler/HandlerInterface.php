@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Evrinoma\FetchBundle\Handler;
 
+use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\FetchBundle\Description\DescriptionInterface;
 use Evrinoma\FetchBundle\Exception\Handler\HandlerInvalidException;
 use Evrinoma\FetchBundle\Manager\RegisterInterface;
@@ -30,6 +31,13 @@ interface HandlerInterface extends RegisterInterface
      * @param DescriptionInterface $description
      */
     public function addDescription(DescriptionInterface $description): void;
+
+    /**
+     * @param DtoInterface $dto
+     *
+     * @return HandlerInterface
+     */
+    public function setDto(DtoInterface $dto): HandlerInterface;
 
     /**
      * @param string $name
