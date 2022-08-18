@@ -24,7 +24,7 @@ use Evrinoma\FetchBundle\Run\RunInterface;
 abstract class AbstractHandler implements HandlerInterface, RunInterface
 {
     protected ?PullInterface $stream = null;
-    protected ?DtoInterface $dto = null;
+    protected $entity = null;
     protected array          $data = [];
     private array            $description = [];
 
@@ -49,9 +49,9 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
         return $this;
     }
 
-    public function setDto(DtoInterface $dto): HandlerInterface
+    public function setEntity($entity): HandlerInterface
     {
-        $this->dto = $dto;
+        $this->entity = $entity;
 
         return $this;
     }

@@ -34,7 +34,7 @@ abstract class AbstractApiDescription extends AbstractDescription
         $this->apiHost = $apiHost;
     }
 
-    abstract protected function getOptions(?DtoInterface $dto): array;
+    abstract protected function getOptions($entity): array;
 
     protected function getHeaders(): array
     {
@@ -46,16 +46,16 @@ abstract class AbstractApiDescription extends AbstractDescription
     }
 
     /**
-     * @param DtoInterface|null $dto
+     * @param $entity
      *
      * @return array
      *
      * @throws DescriptionCommunicationException
      */
-    public function load(?DtoInterface $dto): array
+    public function load($entity): array
     {
         try {
-            $response = $this->client->request($this->method, $this->getUrl(), $this->toOptions($dto));
+            $response = $this->client->request($this->method, $this->getUrl(), $this->toOptions($entity));
         } catch (\Throwable $e) {
             throw new DescriptionCommunicationException($e->getMessage());
         }

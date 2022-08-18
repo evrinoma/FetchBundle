@@ -33,11 +33,11 @@ interface HandlerInterface extends RegisterInterface
     public function addDescription(DescriptionInterface $description): void;
 
     /**
-     * @param DtoInterface $dto
+     * @param $entity
      *
      * @return HandlerInterface
      */
-    public function setDto(DtoInterface $dto): HandlerInterface;
+    public function setEntity($entity): HandlerInterface;
 
     /**
      * @param string $name

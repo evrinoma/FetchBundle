@@ -21,13 +21,13 @@ use Evrinoma\FetchBundle\Manager\RegisterInterface;
 interface DescriptionInterface extends RegisterInterface
 {
     /**
-     * @param DtoInterface|null $dto
+     * @param $entity
      *
      * @return array
      *
      * @throws DescriptionCommunicationException
      */
-    public function load(?DtoInterface $dto): array;
+    public function load($entity): array;
 
     /**
      * @return bool
