@@ -21,17 +21,17 @@ use Evrinoma\FetchBundle\Pull\PullInterface;
 abstract class AbstractDescription implements DescriptionInterface, PullInterface
 {
     /**
-     * @param ?DtoInterface $dto
+     * @param $entity
      *
      * @return array
      *
      * @throws DescriptionCommunicationException
      * @throws DescriptionInvalidException
      */
-    public function pull(?DtoInterface $dto): array
+    public function pull($entity): array
     {
         try {
-            $data = $this->configure() ? $this->load($dto) : [];
+            $data = $this->configure() ? $this->load($entity) : [];
         } catch (\Exception $e) {
             throw $e;
         }

@@ -55,7 +55,7 @@ abstract class AbstractApiDescription extends AbstractDescription
     public function load($entity): array
     {
         try {
-            $response = $this->client->request($this->method, $this->getUrl(), $this->toOptions($entity));
+            $response = $this->client->request($this->method, $this->getUrl($entity), $this->toOptions($entity));
         } catch (\Throwable $e) {
             throw new DescriptionCommunicationException($e->getMessage());
         }
@@ -73,7 +73,7 @@ abstract class AbstractApiDescription extends AbstractDescription
         return true;
     }
 
-    private function toOptions(?DtoInterface $dto): array
+    private function toOptions($entity): array
     {
         switch ($this->method) {
             case Request::METHOD_GET:
@@ -89,10 +89,10 @@ abstract class AbstractApiDescription extends AbstractDescription
                 throw new DescriptionCommunicationException();
         }
 
-        return array_merge($this->getHeaders(), [$key => $this->getOptions($dto)]);
+        return array_merge($this->getHeaders(), [$key => $this->getOptions($entity)]);
     }
 
-    private function getUrl(): string
+    protected function getUrl($entity): string
     {
         return $this->apiHost.$this->route;
     }

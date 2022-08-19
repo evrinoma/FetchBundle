@@ -20,12 +20,12 @@ use Evrinoma\FetchBundle\Exception\Description\DescriptionInvalidException;
 interface PullInterface
 {
     /**
-     * @param ?DtoInterface $dto
+     * @param $entity
      *
      * @return array
      *
      * @throws DescriptionCommunicationException
      * @throws DescriptionInvalidException
      */
-    public function pull(?DtoInterface $dto): array;
+    public function pull($entity): array;
 }

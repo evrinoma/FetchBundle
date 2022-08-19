@@ -37,7 +37,7 @@ abstract class AbstractHandler implements HandlerInterface, RunInterface
     public function run(): HandlerInterface
     {
         try {
-            $this->data = $this->stream->pull($this->dto);
+            $this->data = $this->stream->pull($this->entity);
         } catch (\Exception $e) {
             throw new HandlerUnprocessableException($e->getMessage());
         }
