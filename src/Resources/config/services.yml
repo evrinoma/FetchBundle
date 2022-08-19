@@ -1,9 +1,1 @@
 services:
-  Evrinoma\FetchBundle\Manager\FetchManager:
-    alias: evrinoma.fetch.manager.fetch
-    public: true
-
-  evrinoma.fetch.manager.fetch:
-    class: Evrinoma\FetchBundle\Manager\FetchManager
-    autowire: true
-
