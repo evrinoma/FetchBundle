@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Evrinoma\FetchBundle\Handler;
 
-use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\FetchBundle\Description\DescriptionInterface;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionOverriddenException;
 use Evrinoma\FetchBundle\Exception\Handler\HandlerInvalidException;

@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Evrinoma\FetchBundle\Description\Api;
 
-use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\FetchBundle\Description\AbstractDescription;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionCommunicationException;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionInvalidException;
@@ -25,13 +24,14 @@ abstract class AbstractApiDescription extends AbstractDescription
 {
     protected HttpClientInterface $client;
     protected string              $method = '';
-    protected string              $route = '';
-    private string                $apiHost = '';
+    protected string $route = '';
+    private string   $host = '';
 
-    public function __construct(string $apiHost)
+    public function __construct(string $host, string $route)
     {
         $this->client = HttpClient::create();
-        $this->apiHost = $apiHost;
+        $this->host = $host;
+        $this->route = $route;
     }
 
     abstract protected function getOptions($entity): array;
@@ -94,6 +94,6 @@ abstract class AbstractApiDescription extends AbstractDescription
 
     protected function getUrl($entity): string
     {
-        return $this->apiHost.$this->route;
+        return $this->host.$this->route;
     }
 }

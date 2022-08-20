@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Evrinoma\FetchBundle\Pull;
 
-use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionCommunicationException;
 use Evrinoma\FetchBundle\Exception\Description\DescriptionInvalidException;
 

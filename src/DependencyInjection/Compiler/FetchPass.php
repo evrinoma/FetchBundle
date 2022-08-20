@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Evrinoma\FetchBundle\DependencyInjection\Compiler;
 
-use Evrinoma\FetchBundle\Manager\FetchManager;
 use Evrinoma\FetchBundle\Manager\FetchManagerInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
