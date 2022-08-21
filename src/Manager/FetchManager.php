@@ -55,4 +55,9 @@ class FetchManager implements FetchManagerInterface
 
         return $handler;
     }
+
+    public function getManagerName(): string
+    {
+        return FetchManagerInterface::class;
+    }
 }

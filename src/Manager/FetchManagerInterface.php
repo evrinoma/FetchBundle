@@ -15,8 +15,9 @@ namespace Evrinoma\FetchBundle\Manager;
 
 use Evrinoma\FetchBundle\Exception\Handler\HandlerInvalidException;
 use Evrinoma\FetchBundle\Handler\HandlerInterface;
+use Evrinoma\UtilsBundle\Manager\EntityManagerInterface;
 
-interface FetchManagerInterface
+interface FetchManagerInterface extends EntityManagerInterface
 {
     /**
      * @param string $handlerName

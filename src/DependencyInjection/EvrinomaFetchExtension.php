@@ -39,6 +39,7 @@ class EvrinomaFetchExtension extends Extension
         $alias->setPublic(true);
         $container->addDefinitions(['evrinoma.fetch.manager.fetch' => $fetchManager]);
         $container->addAliases([FetchManagerInterface::class => $alias]);
+        $fetchManager->addTag('evrinoma.utils.entity_manager');
     }
 
     public function getAlias()
