@@ -79,10 +79,10 @@ abstract class AbstractApiDescription extends AbstractDescription
             case Request::METHOD_GET:
                 $key = 'query';
                 break;
-            case Request::METHOD_POST:
+            case Request::METHOD_PUT:
                 $key = 'body';
                 break;
-            case Request::METHOD_PUT:
+            case Request::METHOD_POST:
                 $key = 'json';
                 break;
             default:
