@@ -24,8 +24,8 @@ abstract class AbstractApiDescription extends AbstractDescription
 {
     protected HttpClientInterface $client;
     protected string              $method = '';
-    protected string $route = '';
-    private string   $host = '';
+    protected string              $route = '';
+    protected string              $host = '';
 
     public function __construct(string $host, string $route)
     {
