@@ -44,7 +44,7 @@
         "jms/serializer-bundle": "^3.1",
         "symfony/dotenv": "5.2.*",
         "evrinoma/test-utils-bundle": "dev-master",
-        "friendsofphp/php-cs-fixer": "3.9.5"
+        "friendsofphp/php-cs-fixer": "^3.4|^3.8"
     },
     "repositories": {
         "dto": {
