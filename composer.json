@@ -44,9 +44,14 @@
         "jms/serializer-bundle": "^3.1",
         "symfony/dotenv": "5.2.*",
         "evrinoma/test-utils-bundle": "dev-master",
-        "friendsofphp/php-cs-fixer": "^3.4|^3.8"
+        "friendsofphp/php-cs-fixer": "^3.4|^3.8",
+        "evrinoma/hooks-bundle": "dev-master"
     },
     "repositories": {
+        "hooks": {
+            "type": "vcs",
+            "url": "https://github.com/evrinoma/HooksBundle.git"
+        },
         "dto": {
             "type": "vcs",
             "url": "https://github.com/evrinoma/DtoBundle.git"
