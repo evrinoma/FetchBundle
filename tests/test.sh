@@ -5,7 +5,7 @@ echo > $log
 
 rm -rf vendor
 rm -rf composer.lock
-composer install --dev
+COMPOSER_NO_DEV=0 composer
 rm -rf /tmp/FetchBundle
 
 /usr/bin/php vendor/phpunit/phpunit/phpunit --bootstrap src/Tests/bootstrap.php --configuration phpunit.xml.dist src/Tests >> $log 2>&1
